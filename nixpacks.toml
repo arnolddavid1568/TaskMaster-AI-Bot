@@ -1,0 +1,10 @@
+# Tells Railway's Nixpacks builder to install the tesseract-ocr system
+# binary alongside the Python environment, so the /ocr command works
+# out of the box (pytesseract is just a Python wrapper around this
+# binary — it does nothing without it).
+#
+# This only affects Railway/Nixpacks builds. Render and plain VPS
+# deployments install tesseract differently — see README.md.
+
+[phases.setup]
+nixPkgs = ["...", "tesseract"]
